@@ -1,0 +1,62 @@
+{% extends 'japadjapp/base.html' %}
+
+{% block estilos %}
+{% endblock estilos %}
+
+{% block titulo %}
+<title>Administrador: {{contexto.usuario.usuario}}</title>
+{% endblock titulo %}
+
+{% block cuerpo %}
+<div class="categorias">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>CATEGORIA</th>
+            <th>ACCIONES</th>
+        </tr>
+    {% for categoria in contexto.categorias %}
+        <tr>
+            <td>{{categoria.serial_cat}}</td>
+            <td>{{categoria.categoria}}</td>
+            <td>
+                <a href="{% url 'editar_cat' %}">Editar</a>
+                <a href="{% url 'eliminar_cat' %}">Eliminar</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+<div class="libros">
+    <table>
+        <tr>
+            <th>SERIAL</th>
+            <th>TITULO</th>
+            <th>FECHA</th>
+            <th>CATEGORIA</th>
+            <th>PRECIO</th>
+            <th>CANTIDAD</th>
+            <th>PORTADA</th>
+            <th>ACCIONES</th>
+        </tr>
+        {% for libro in contexto.libros %}
+            <tr>
+                <td>{{libro.serial}}</td>
+                <td>{{libro.titulo}}</td>
+                <td>{{libro.fecha_pub}}</td>
+                <td>{{libro.categoria}}</td>
+                <td>{{libro.precio}}</td>
+                <td>{{libro.cantidad_stock}}</td>
+                <td>{{libro.portada}}</td>
+                <td>
+                    <a href="{% url 'editar' %}">Editar</a>
+                    <a href="{% url 'eliminar' %}">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock cuerpo %}
+
+{% block javascript %}
+{% endblock javascript %}

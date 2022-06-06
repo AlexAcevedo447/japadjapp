@@ -1,0 +1,36 @@
+{% extends 'japadjapp/base.html' %}
+
+    {% block estilos %}
+
+    <link rel="stylesheet" href="../../static/japadjapp/styles/login.css"/>
+
+    {%endblock estilos%}
+
+{% block titulo %}
+
+    <title>Iniciar Sesion</title>
+
+{% endblock titulo %}
+
+{% block cuerpo %}
+
+    <h1>Nos encontramos en el inicio de sesion</h1>
+
+                
+                    <form class="form formulario" action="{% url 'procesar' %}" method="post" id="form">
+                        {% csrf_token %}
+                        <legend class="titulo" >
+                            Ingresa tus datos
+                        </legend>
+            
+                        <input type="text" class="input" name="usuario" id="usuario" placeholder="Usuario"/>
+                        <input type="password" class="input" name="clave" id="clave" placeholder="Contraseña"/>
+                        <input type="submit" class="btn_enviar" value="Enviar informacion">
+                        {% comment %} Switch {% endcomment %}
+                        <input type="hidden" value = "{{validated}}">
+                    </form>
+
+                    <p id="paragraph">{{mensaje}}</p>
+
+{% endblock cuerpo %}
+

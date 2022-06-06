@@ -1,0 +1,48 @@
+.formulario{
+    background-color: rgb(181, 192, 33);
+    padding: 20px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.verde{
+    color: greenyellow;
+}
+
+.rojo{
+    color: rgb(255, 60, 0);
+}
+
+.input{
+    border: none;
+    border-bottom: 1px solid rgb(181, 192, 33);
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.titulo{
+    color: rgb(5, 5, 124);
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.btn_enviar{
+    background: rgb(5, 5, 124);
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+h1{
+    color: red;
+}
+
+body{
+    background-color: rgb(5, 5, 124);
+}
+
